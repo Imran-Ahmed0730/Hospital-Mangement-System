@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Feedback!
+{% endblock %}
+
+{% block content %}
+<div class="container div-f">
+    <div>
+            <h2 style="text-align:center"><br>Welcome to<br> Jahangir Basar Memorial Virtual Hospital</h2>
+        </div>
+
+    <br><br>
+        <div class="container">
+            <div>
+                {% if current_user.appointed_doctor == '' %}
+                    <h3>You Don't Have Any Appointment</h3>
+                {% else %}
+                        <h3 style="color: green"><b>Appointed Doctor Name: {{ current_user.appointed_doctor }}</b></h3>
+                {% endif %}
+            </div>
+            <p style="padding: 25px"></p>
+
+<img src="https://media.discordapp.net/attachments/745242546283741224/918188533120892958/right-arrow.png?width=406&height=406"
+            height="50" width = 50>
+ <a href="{{ url_for('appointment_page') }}">
+            <button class="btn btn-lg btn-primary">
+                <b>Take Appointment</b></button>
+        </a>
+            <br><br>
+            <img src="https://media.discordapp.net/attachments/745242546283741224/918188533120892958/right-arrow.png?width=406&height=406"
+            height="50" width = 50>
+            <a href="{{ url_for('appointment_info') }}">
+            <button class="btn btn-lg btn-primary"><b>Appointment Details</b></button>
+             </a>
+        <br><br>
+             <img src="https://media.discordapp.net/attachments/745242546283741224/918188533120892958/right-arrow.png?width=406&height=406"
+            height="50" width = 50><a href="{{ url_for('feedback') }}">
+            <button class="btn btn-lg btn-primary"><b>Give FeedBack</b></button>
+        </a>
+            <br><br>
+            <div>
+                <form method="POST" class="for-feedback" style="color:black">
+                {{ form.hidden_tag() }}
+
+                <h4 > {{ form.owner_feedback.label() }} {{ form.owner_feedback(class="form-control", placeholder="Enter Your Feedback") }} </h4>
+
+                <br>
+                {{ form.submit(class="btn btn-lg btn-block btn-success") }}
+            </form>
+            </div>
+            <p style="padding: 40px"></p>
+        </div>
+
+
+    <br><br>
+</div>
+<style>
+      .div-f {
+      background-color: white;
+      color: black
+      }
+      .div-g{
+      background color: white;
+</style>
+
+
+{% endblock %}

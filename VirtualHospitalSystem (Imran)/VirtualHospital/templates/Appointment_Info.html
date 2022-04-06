@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block title %}
+Doctor List!
+{% endblock %}
+{% block content %}
+<div class="container div-g">
+   <h1 style="font-family:Times New Roman; text-align:center; font-weight: bold"><u>Appointment Form</u></h1>
+   <div class="container div-f">
+       <table class="table table-striped">
+      <thead>
+         <tr>
+            <!-- Your Columns HERE -->
+         </tr>
+      </thead>
+      <tbody>
+         <!-- Your rows inside the table HERE: -->
+         <tr>
+             <td>Patient ID: </td>
+             <td>{{ current_user.id }}</td>
+         </tr>
+
+         <tr>
+             <td>Patient Name: </td>
+             <td>{{current_user.username}}</td>
+         </tr>
+
+         <tr>
+             <td>Age: </td>
+             <td>{{current_user.age}}</td>
+         </tr>
+
+         <tr>
+             <td>Symptom: </td>
+             <td>{{ current_user.symptom }}</td>
+         </tr>
+
+         <tr>
+            <td>Appointed Doctor:</td>
+             <td>{{ current_user.appointed_doctor }}</td>
+         </tr>
+      </tbody>
+   </table>
+   </div>
+    <br><br>
+</div>
+<style>
+   .div-g {
+   background-color: #FFFFFF;
+   color: black
+   }
+
+   .div-f{
+   font-weight: bold;
+   font-size: 20px;
+   }
+</style>
+{% endblock %}

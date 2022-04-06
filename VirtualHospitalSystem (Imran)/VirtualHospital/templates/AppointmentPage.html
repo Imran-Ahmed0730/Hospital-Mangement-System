@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block title %}
+Doctor List!
+{% endblock %}
+{% block content %}
+<div class="container div-g">
+   <h1 style="font-family:Times New Roman; text-align:center; font-weight: bold"><u>Appointment Form</u></h1>
+   <div class="container div-f">
+       <table class="table table-striped">
+      <thead>
+         <tr>
+            <!-- Your Columns HERE -->
+            <th scope="col"></th>
+            <th scope="col"></th>
+         </tr>
+      </thead>
+      <tbody>
+         <!-- Your rows inside the table HERE: -->
+         <tr>
+             <td>Patient ID: </td>
+             <td>{{ current_user.id }}</td>
+         </tr>
+
+         <tr>
+             <td>Patient Name: </td>
+             <td>{{current_user.username}}</td>
+         </tr>
+
+         <tr>
+             <td>Age: </td>
+             <td>{{current_user.age}}</td>
+         </tr>
+
+         <tr>
+             <td>Select Doctor For Appointment</td>
+             <td><a href="{{ url_for('Available_Doctors') }}"><button class="btn btn-outline-primary"><b>Doctors</b></button></a></td>
+         </tr>
+
+         <tr>
+             <td>Symptom: </td>
+             <td>
+                <form method="POST" class="for-symptom" style="color:black">
+                {{ form.hidden_tag() }}
+
+                <h4 > {{ form.symptom.label() }} {{ form.symptom(class="form-control", placeholder="Symptom") }} </h4>
+
+                <br>
+                {{ form.submit(class="btn btn-lg btn-block btn-success") }}
+            </form>
+             </td>
+         </tr>
+
+      </tbody>
+   </table>
+       <div align="center">
+           <a href="{{ url_for('home_page') }}"><button class="btn btn-outline-success" ><b>Confirm Appointment</b></button></a>
+       </div>
+   </div>
+    <br>
+    <br>
+</div>
+<style>
+   .div-g {
+   background-color: #FFFFFF;
+   color: black
+   }
+
+   .div-f{
+   font-weight: bold;
+   font-size: 20px;
+   }
+</style>
+{% endblock %}

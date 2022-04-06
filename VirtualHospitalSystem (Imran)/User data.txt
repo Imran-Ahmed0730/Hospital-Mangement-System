@@ -1,0 +1,14 @@
+Doctor:
+Ariful Islam: ariful123
+Akramul Bashar: akramul123
+Tanvir Alam: tanvir123
+
+
+Patient:
+Akash Mahmud: akash123
+Ismail Islam: ismail123
+Jafor Alam: jafor123
+Jahid Hossain: jahid123
+Borshon Hossain: borshon123
+
+

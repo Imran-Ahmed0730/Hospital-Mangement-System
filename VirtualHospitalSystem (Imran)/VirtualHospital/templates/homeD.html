@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}
+Home Page for doctors!
+{% endblock %}
+{% block content %}
+<br>
+<div class="container div-f">
+   <div class="container">
+      <div>
+            <h2 style="text-align:center"><br>Welcome to<br> Jahangir Basar Memorial Virtual Hospital</h2>
+        </div>
+      <br><br>
+      <img src="https://media.discordapp.net/attachments/745242546283741224/918188533120892958/right-arrow.png?width=406&height=406"
+         height="50" width = 50>
+      <a href="{{ url_for('Patient_List') }}">
+      <button class="btn-outline-light" style="color: rgb(42, 39, 39); height: 50px; font-size:28px; width:200px">
+      <b>Patient List</b></button>
+      </a>
+      <br><br>
+
+      <img src="https://media.discordapp.net/attachments/745242546283741224/918188533120892958/right-arrow.png?width=406&height=406"
+         height="50" width = 50>
+      <a href="{{ url_for('Update_medication') }}">
+      <button class="btn-outline-light" style="color: rgb(42, 39, 39); height: 50px; font-size:28px; width:290px">
+      <b>Update Medication</b></button>
+      </a>
+      <br><br>
+      <img src="https://media.discordapp.net/attachments/745242546283741224/918188533120892958/right-arrow.png?width=406&height=406"
+         height="50" width = 50>
+      <a href="{{ url_for('feedback_page') }}">
+      <button class="btn-outline-light" style="color: rgb(42, 39, 39); height: 50px; font-size:28px; width:250px">
+      <b>Check Feedback</b></button>
+      </a>
+   </div>
+   <br><br>
+</div>
+<style>
+   .div-f {
+   background-color: white;
+   background-height: cover;
+   color: black
+   }
+</style>
+{% endblock %}

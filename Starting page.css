@@ -1,0 +1,21 @@
+body{
+	background-image: url("Background.png");
+	text-align: center;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button
+{
+	color: "3C434E";
+	background-color: white;
+	border-radius: 30px;
+  padding: 15px 32px;
+  	text-align: center;
+  	/*display: inline-block;*/
+  	font-size: 25px;
+}

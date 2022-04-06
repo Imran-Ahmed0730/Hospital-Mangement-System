@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title %}
+Patient List!
+{% endblock %}
+{% block content %}
+<div class="container div-g">
+   <h2 style="font-family:Times New Roman; text-align:center">Patient List of Dr. {{ current_user.username }}</h2>
+   <table class="table table-striped">
+      <thead>
+         <tr>
+            <!-- Your Columns HERE -->
+            <th scope="col">Patient ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email Address</th>
+            <th scope="col">Symptoms</th>
+            <th scope="col">Medicine</th>
+            <th scope="col">Dose Per Day</th>
+            <th scope="col">Feed Back</th>
+            <th scope="col">Option</th>
+
+            <!-- <th scope="col">Symptoms</th>-->
+         </tr>
+      </thead>
+      <tbody>
+         <!-- Your rows inside the table HERE: -->
+         {% for patient in patients %}
+         {% include 'include/Doctor_modals.html' %}
+         {% if patient.owner_id == current_user.id %}
+         <tr>
+            <td>{{ patient.id }}</td>
+            <td>{{ patient.username }}</td>
+            <td>{{ patient.email_address }}</td>
+            <td>{{ patient.symptom }}</td>
+            <td>{{ patient.medicine }}</td>
+            <td>{{ patient.dose }}</td>
+            <td>{{ patient.owner_feedback }}</td>
+            <td>
+               <button class="btn btn-outline btn-success" data-toggle="modal" data-target="#Modal-Remove-{{ patient.id }}">Remove Patient</button>
+            </td>
+         </tr>
+         {% endif %}
+         {% endfor %}
+      </tbody>
+   </table>
+</div>
+<style>
+   .div-g {
+   background-color: #FFFFFF;
+   color: black
+   }
+</style>
+{% endblock %}
